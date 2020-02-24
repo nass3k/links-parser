@@ -1,15 +1,12 @@
 <?php
 
 
-//phpinfo(); die;
-// include composer autoload
 require 'vendor/autoload.php';
 
-// import the Intervention Image Manager Class
-use Intervention\Image\ImageManager;
+use App\Parser\Parser;
 
-// create an image manager instance with favored driver
-$manager = new ImageManager(array('driver' => 'imagick'));
+$parser = new Parser();
 
-// to finally create image instances
-$image = $manager->make('public/foo.jpg')->resize(300, 200);
+
+
+print_r($parser->process('https://thermo-spb.ru/', 'a'));
